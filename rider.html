@@ -1,0 +1,53 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="http://fonts.googleapis.com/css?family=News+Cycle:400,700" rel="stylesheet" />
+<link href="default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+
+
+</head>
+<body>
+<div id="header" class="container">
+	<div id="logo">
+		<h1><a href="/index.html">Strikeout</a></h1>
+	</div>
+	<div id="menu">
+		<ul>
+			<li><button id="sign-in">Sign-in with Google</button></li>
+			<!--
+			<li class="current_page_item"><a href="#" accesskey="1" title="">Homepage</a></li>
+			<li><a href="#" accesskey="2" title="">About Us</a></li>
+			-->
+		</ul>
+	</div>
+</div>
+<div id="page" class="container">
+	<div class="title">
+		<h2>Register as a rider</h2>
+		<span class="byline">We'll try to find a group that can bring you along</span>
+	</div>
+	<div class="form-style">
+		<form autocomplete=off>
+			<input type="text" name="from" placeholder="Where are you leaving from?">
+			<div class="suggestions" id="suggestions-from" hidden="true"></div>
+			<input type="text" name="to" placeholder="Where do you need to go?">
+			<div class="suggestions" id="suggestions-to" hidden="true"></div>
+			<input type="text" name="arrive" placeholder="When do you need to arrive?">
+			<input type="text" name="daysofweek" placeholder="Which days of the week are you making this trip? (placeholder box)">
+			<input type="text" name="x" placeholder="(placeholder box for map and driver list)">
+			<input type="submit" text="Submit">
+		</form>
+	</div>
+</div>
+<div id="copyright" class="container">
+	<p>&copy; Strikeout UBC. All rights reserved.</p>
+</div>
+<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+<script src="rider.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBomUcZ9fmvDmItL9JAtyj1N5yfrM8D1PM&callback=initMap" async defer></script>
+</body>
+</html>
