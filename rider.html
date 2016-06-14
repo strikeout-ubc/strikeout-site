@@ -95,7 +95,7 @@
 	</div>
 	<div id="menu">
 		<ul>
-			<li><button id="sign-in">Sign-in with Facebook</button></li>
+			<li><fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>/li>
 			<!--
 			<li class="current_page_item"><a href="#" accesskey="1" title="">Homepage</a></li>
 			<li><a href="#" accesskey="2" title="">About Us</a></li>
@@ -103,6 +103,7 @@
 		</ul>
 	</div>
 </div>
+<div id="status"></div>
 <div id="page" class="container">
 	<div class="title">
 		<h2>Register as a rider</h2>
