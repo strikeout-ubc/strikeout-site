@@ -5,7 +5,6 @@ var typingTimer;
 var doneTypingInterval = 2000;
 
 var fromInput = document.getElementsByName("from")[0];
-var signInButton = document.getElementById("sign-in");
 
 fromInput.onkeyup = function() {
 	clearTimeout(typingTimer);
@@ -15,10 +14,6 @@ fromInput.onkeyup = function() {
 fromInput.onkeydown = function() {
 	clearTimeout(typingTimer);
 };
-
-signInButton.onclick = function() {
-  // fbauth.signInWithPopup(provider);
-}
 
 window.onload = function() {
 }

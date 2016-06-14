@@ -22,7 +22,7 @@
 		// for FB.getLoginStatus().
 		if (response.status === 'connected') {
 			// Logged into your app and Facebook.
-			testAPI();
+			apiInit();
 		} else if (response.status === 'not_authorized') {
 			// The person is logged into Facebook, but not your app.
 			document.getElementById('status').innerHTML = 'Please log ' +
@@ -48,7 +48,7 @@
 		FB.init({
 			appId : '883658318429931',
 			xfbml: true,
-			version: 'v2.5',
+			version: 'v2.6',
 			cookie: true // enable cookies to allow the server to access 
 		});
 
@@ -80,12 +80,10 @@
 
 	// Here we run a very simple test of the Graph API after login is
 	// successful.	See statusChangeCallback() for when this call is made.
-	function testAPI() {
-		console.log('Welcome!	Fetching your information.... ');
+	function initApi() {
+		console.log('Welcome! Fetching your information...');
 		FB.api('/me', function(response) {
-			console.log('Successful login for: ' + response.name);
-			document.getElementById('status').innerHTML =
-				'Thanks for logging in, ' + response.name + '!';
+			console.log('Successful login for: ' + response.name + ', userid = ' + response.id);
 		});
 	}
 </script>
@@ -95,7 +93,7 @@
 	</div>
 	<div id="menu">
 		<ul>
-			<li><fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>/li>
+			<li><fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button></li>
 			<!--
 			<li class="current_page_item"><a href="#" accesskey="1" title="">Homepage</a></li>
 			<li><a href="#" accesskey="2" title="">About Us</a></li>
