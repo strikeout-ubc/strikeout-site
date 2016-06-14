@@ -1,13 +1,5 @@
 'use strict';
 
-var fc = {
-	apiKey: "AIzaSyB_6jpH_uOBr4498ax3kPDTqcm-t5nfUy0",
-	authDomain: "project-3294112591412279601.firebaseapp.com",
-	databaseURL: "https://project-3294112591412279601.firebaseio.com",
-	storageBucket: "project-3294112591412279601.appspot.com",
-};
-firebase.initializeApp(fc);
-
 var geocoder;
 var typingTimer;
 var doneTypingInterval = 2000;
@@ -25,24 +17,10 @@ fromInput.onkeydown = function() {
 };
 
 signInButton.onclick = function() {
-  var provider = new firebase.auth.GoogleAuthProvider();
-  fbauth.signInWithPopup(provider);
+  // fbauth.signInWithPopup(provider);
 }
 
 window.onload = function() {
-	var fbauth = firebase.auth();
-	var fbdatabase = firebase.database();
-	var fbstorage = firebase.storage();
-	fbauth.onAuthStateChanged(onAuthStateChanged);
-}
-
-function onAuthStateChanged(user) {
-	if (user) {
-		signInButton.setAttribute('hidden', 'true');
-	}
-	else {
-		signInButton.setAttribute('hidden', 'false');
-	}
 }
 
 function doneTyping () {
