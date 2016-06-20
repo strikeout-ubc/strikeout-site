@@ -23,9 +23,12 @@ function statusChangeCallback(response) {
 	// for FB.getLoginStatus().
 	if (response.status === 'connected') {
 		// Logged into your app and Facebook.
-		FB.api('/me', { fields: "id,gender,first_name,last_name" }, function (r) {
+		FB.api('/me', { fields: "name,id,gender,first_name,last_name" }, function (r) {
 			console.log('Successful login for: ' + r.first_name + ', userid = ' + r.id);
-			console.log(r);
+			USERID = r.id;
+			USERFIRSTNAME = r.first_name;
+			USERLASTNAME = r.last_name;
+			USERNAME = r.name;
 		});
 	} else if (response.status === 'not_authorized') {
 		// The person is logged into Facebook, but not your app.
@@ -116,7 +119,7 @@ function apiInit() {
 			<div class="suggestions" id="suggestions-to" hidden="true"></div>
 			<input type="text" name="arrive" placeholder="When do you need to arrive?">
 			<input type="text" name="daysofweek" placeholder="Which days of the week are you making this trip? (placeholder box)">
-			<input type="text" name="x" placeholder="(placeholder box for map and driver list)">
+			<div id="map-canvas" style="height: 100%"></div>
 			<input type="submit" text="Submit">
 		</form>
 	</div>
